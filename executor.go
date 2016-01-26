@@ -22,8 +22,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/elodina/go-kafka-client-mesos/framework"
 	"github.com/mesos/mesos-go/executor"
-	"github.com/stealthly/go_kafka_client/mesos/framework"
 )
 
 var logLevel = flag.String("log.level", "info", "Log level. trace|debug|info|warn|error|critical. Defaults to info.")
