@@ -17,9 +17,9 @@ package framework
 
 import (
 	"encoding/json"
+	kafka "github.com/elodina/go_kafka_client"
 	"github.com/mesos/mesos-go/executor"
 	mesos "github.com/mesos/mesos-go/mesosproto"
-	kafka "github.com/stealthly/go_kafka_client"
 	"os"
 	"strings"
 )

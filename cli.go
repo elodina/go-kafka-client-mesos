@@ -23,7 +23,7 @@ import (
 
 	"math"
 
-	"github.com/stealthly/go_kafka_client/mesos/framework"
+	"github.com/elodina/go-kafka-client-mesos/framework"
 )
 
 var executor = flag.String("executor", "", "Executor binary name")
