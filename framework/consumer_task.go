@@ -85,18 +85,33 @@ func (ct *ConsumerTask) createExecutor() *mesos.ExecutorInfo {
 		},
 	}
 
-	for _, consumerConfig := range strings.Split(ct.Config["consumer.config"], ",") {
-		uris = append(uris, toURI(consumerConfig))
+	paramNames := []string{"brokers", "topics", "partitions", "cassandra", "keyspace", "schema"}
+
+	params := make([]string, 0)
+	for _, name := range paramNames {
+		params = append(params, ct.makeParam(name))
 	}
+
+	paramString := strings.Join(params, " ")
+
+	Logger.Debugf("Launching executor with params %s", paramString)
 
 	return &mesos.ExecutorInfo{
 		ExecutorId: util.NewExecutorID(id),
 		Name:       proto.String("kafka-consumer"),
 		Command: &mesos.CommandInfo{
-			Value: proto.String(fmt.Sprintf("./%s --log.level %s --type %s", executor, Config.LogLevel, TaskTypeConsumer)),
+			Value: proto.String(fmt.Sprintf("./%s --log.level %s --type %s %s", executor, Config.LogLevel, TaskTypeConsumer, paramString)),
 			Uris:  uris,
 		},
 	}
+}
+
+func (ct *ConsumerTask) makeParam(param string) string {
+	val, _ := ct.Config.GetString(param)
+	if val == "" {
+		return ""
+	}
+	return fmt.Sprintf("--%s %s", param, val)
 }
 
 func (ct *ConsumerTask) Matches(offer *mesos.Offer) string {
