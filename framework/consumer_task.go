@@ -94,6 +94,8 @@ func (ct *ConsumerTask) createExecutor() *mesos.ExecutorInfo {
 
 	paramString := strings.Join(params, " ")
 
+	Logger.Debugf("Launching executor with params %s", paramString)
+
 	return &mesos.ExecutorInfo{
 		ExecutorId: util.NewExecutorID(id),
 		Name:       proto.String("kafka-consumer"),
@@ -106,6 +108,9 @@ func (ct *ConsumerTask) createExecutor() *mesos.ExecutorInfo {
 
 func (ct *ConsumerTask) makeParam(param string) string {
 	val, _ := ct.Config.GetString(param)
+	if val == "" {
+		return ""
+	}
 	return fmt.Sprintf("--%s %s", param, val)
 }
 

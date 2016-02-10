@@ -21,13 +21,5 @@ func (ct *CommonTask) commonMatches(offer *mesos.Offer) string {
 		return "no mem"
 	}
 
-	if ct.Config["consumer.config"] == "" {
-		return "consumer.config not set"
-	}
-
-	if ct.Config["whitelist"] == "" && ct.Config["blacklist"] == "" {
-		return "Both whitelist and blacklist are not set"
-	}
-
 	return ""
 }

@@ -111,6 +111,15 @@ func (mm *MirrorMakerTask) Matches(offer *mesos.Offer) string {
 	if common := mm.commonMatches(offer); common != "" {
 		return common
 	}
+
+	if mm.Config["consumer.config"] == "" {
+		return "consumer.config not set"
+	}
+
+	if mm.Config["whitelist"] == "" && mm.Config["blacklist"] == "" {
+		return "Both whitelist and blacklist are not set"
+	}
+
 	if mm.Config["producer.config"] == "" {
 		return "producer.config not set"
 	}
