@@ -1,6 +1,8 @@
 go_kafka_client Mesos Framework
 ==============================
 
+[![Build Status](https://travis-ci.org/elodina/go-kafka-client-mesos.svg?branch=master)](https://travis-ci.org/elodina/go-kafka-client-mesos)
+
 [Description](#description)
 [Installation](#installation)
 * [Prerequisites](#prerequisites)
@@ -35,18 +37,22 @@ Installation
 Prerequisites
 -------------
 
-Install go 1.4 (or higher) http://golang.org/doc/install
+Install go 1.5 (or higher) http://golang.org/doc/install
 
-Install godep https://github.com/tools/godep
+Install glide:
+```bash
+  go get -u github.com/Masterminds/glide
+```
 
 Clone and build the project
 
     # git clone https://github.com/elodina/go-kafka-client-mesos.git
     # cd go-kafka-client-mesos
-    # godep restore ./...
+    # export GO15VENDOREXPERIMENT=1
+    # glide install
     # go build cli.go
-    # go build executor.go
-    
+    # go build executor.go    
+
 Scheduler configuration
 -----------------------
 

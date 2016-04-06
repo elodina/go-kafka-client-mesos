@@ -1,0 +1,16 @@
+package: github.com/elodina/go-kafka-client-mesos
+import:
+- package: github.com/cihub/seelog
+- package: github.com/elodina/go-mesos-utils
+  subpackages:
+  - pretty
+- package: github.com/elodina/go_kafka_client
+- package: github.com/golang/protobuf
+  subpackages:
+  - proto
+- package: github.com/mesos/mesos-go
+  subpackages:
+  - executor
+  - mesosproto
+  - mesosutil
+  - scheduler

@@ -1,0 +1,77 @@
+hash: 3d79550b15bf32dc265af33e5bf0e901c0ab73b036235f17bbdd86e5ecc82e05
+updated: 2016-04-06T19:10:51.783121667+03:00
+imports:
+- name: github.com/cihub/seelog
+  version: a113d9f1aa38f42c23712cb7c04855e9b9f30297
+- name: github.com/eapache/go-resiliency
+  version: b86b1ec0dd4209a588dc1285cdd471e73525c0b3
+  subpackages:
+  - breaker
+- name: github.com/eapache/queue
+  version: ded5959c0d4e360646dc9e9908cff48666781367
+- name: github.com/elodina/go-avro
+  version: f343f06f4207a18c03c88e16eb2ccc6b40799348
+- name: github.com/elodina/go-kafka-avro
+  version: 98ec08f9cb18ba0500287d31bb9a8ede9e9b2d15
+- name: github.com/elodina/go-mesos-utils
+  version: f34f4d54a21ae1c111d618b7aff979cb991879b6
+  subpackages:
+  - pretty
+- name: github.com/elodina/go_kafka_client
+  version: 9e67f8c51bd8b64a308f7e87e4fa125bdb279b6f
+  subpackages:
+  - avro
+- name: github.com/elodina/siesta
+  version: b475e0c7323e380d6c8fa7a440cb7f350510f809
+- name: github.com/elodina/siesta-producer
+  version: 6467e5fd2b8d67d5ff2f4b32989495053c463269
+- name: github.com/gogo/protobuf
+  version: 4365f750fe246471f2a03ef5da5231c3565c5628
+  subpackages:
+  - proto
+- name: github.com/golang/glog
+  version: 23def4e6c14b4da8ac2ed8007337bc5eb5007998
+- name: github.com/golang/protobuf
+  version: dda510ac0fd43b39770f22ac6260eb91d377bce3
+  subpackages:
+  - proto
+- name: github.com/golang/snappy
+  version: 723cc1e459b8eea2dea4583200fd60757d40097a
+- name: github.com/mesos/mesos-go
+  version: 7064d8760d60f029f568b9295e6842612e89e347
+  subpackages:
+  - executor
+  - mesosproto
+  - mesosutil
+  - scheduler
+  - mesosutil/process
+  - messenger
+  - messenger/sessionid
+  - upid
+  - auth
+  - auth/callback
+  - auth/sasl
+  - auth/sasl/mech/crammd5
+  - detector
+  - detector/zoo
+  - mesosproto/scheduler
+  - auth/sasl/mech
+- name: github.com/pborman/uuid
+  version: c55201b036063326c5b1b89ccfe45a184973d073
+- name: github.com/rcrowley/go-metrics
+  version: 51425a2415d21afadfd55cd93432c0bc69e9598d
+- name: github.com/samuel/go-zookeeper
+  version: 218e9c81c0dd8b3b18172b2bbfad92cc7d6db55f
+  subpackages:
+  - zk
+- name: github.com/Shopify/sarama
+  version: 094e483251042a52ce92f76dbcf140ad2bd7cffb
+- name: github.com/yanzay/cfg
+  version: 3b647091f880406fdb14edcb309ce750a38d3e85
+- name: golang.org/x/net
+  version: af4fee9d05b66edc24197d189e6118f8ebce8c2b
+  subpackages:
+  - context
+- name: gopkg.in/cihub/seelog.v2
+  version: d2c6e5aa9fbfdd1c624e140287063c7730654115
+devImports: []
