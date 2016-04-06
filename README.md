@@ -1,6 +1,8 @@
 go_kafka_client Mesos Framework
 ==============================
 
+[![Build Status](https://travis-ci.org/elodina/go-kafka-client-mesos.svg?branch=master)](https://travis-ci.org/elodina/go-kafka-client-mesos)
+
 [Description](#description)
 [Installation](#installation)
 * [Prerequisites](#prerequisites)
